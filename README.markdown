@@ -5,10 +5,6 @@ Implementation of Dijkstra's algorithm to find the shortest (least costly) route
 
 Notes
 -----
-- The shortest route calculation (<code>Graph.shortestRoute()</code>) currently uses an iterative algorithm for simplicity.
-- Dijkstra's algorithm *may* be implemented purely functional (see <code>...*\<root\>*/notes/algorithms/</code> for algorithms in Haskell, Lisp, and Clojure), but to reduce complexity I decided to use an iterative algorithm.
-- From a practical perspective, just because something *may* be done purely functionally doesn't mean it *should* be done purely functionally.
-- If requested, the shortest route calculation may be converted to a functional design.
 - The code base is ready for scaladoc.  In sbt, the action 'doc' will generate <code>scaladoc</code> for the project located in the standard sbt location:
 *...\<root\>/target/scala_2.9.0/doc/main/api/index.html*.
 - To run a demo in sbt: sbt\> demo
