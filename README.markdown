@@ -6,18 +6,12 @@ Implementation of Dijkstra's algorithm to find the shortest (least costly) route
 Notes
 -----
 - The shortest route calculation (<code>Graph.shortestRoute()</code>) currently uses an iterative algorithm for simplicity.
-
 - Dijkstra's algorithm *may* be implemented purely functional (see <code>...*\<root\>*/notes/algorithms/</code> for algorithms in Haskell, Lisp, and Clojure), but to reduce complexity I decided to use an iterative algorithm.
-
 - From a practical perspective, just because something *may* be done purely functionally doesn't mean it *should* be done purely functionally.
-
 - If requested, the shortest route calculation may be converted to a functional design.
-
 - The code base is ready for scaladoc.  In sbt, the action 'doc' will generate <code>scaladoc</code> for the project located in the standard sbt location:
 *...\<root\>/target/scala_2.9.0/doc/main/api/index.html*.
-
 - To run a demo in sbt: sbt\> demo
-
 
 Requirements
 ------------
@@ -42,19 +36,13 @@ This is done out of convenience since the <code>Graph</code> class can contain a
 where
 
 *Arguments:*
-
 - *#-of-nodes* is the number of nodes generated in a regular polygon graph with edges forming the sides of regular polygon (defaults to 23)
-
 - *source-node-id* is the node id of the starting node for calculating the shortest (least costly) route using Dijkstra's algorithm (defaults to 0)
-
 - *target-node-id* is the node id of the ending node for calculating the shortest (least costly) route using Dijkstra's algorithm (defaults to 11)
-
 - *spike-enabled* is a flag to add two (2) 'spike' nodes per polygon node (see below for more information) (defaults to false)
 
 *Argument notes*
-
 - If there are *n* number of nodes, the node ids are 0 to n-1 (e.g. "0","1","2",...,"n-1").
-
 - The order of source and target nodes is irrelevant (other than affecting the direction of the shortest route (if any exist)).
 
 ### Regular Polygon Graphs
@@ -62,9 +50,11 @@ where
 To exercise the algorithm and generate a exported graph image with shortest route traversal:
 
 from command-line:
+
 > $ scala GraphUtil 17 0 8
 
 or in **sbt**
+
 > sbt> run 17 0 8
 
 Both of these commands will create a graph as a 17-sided regular polygon with edges as sides, calculate the
