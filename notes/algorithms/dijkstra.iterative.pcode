@@ -1,0 +1,34 @@
+Source: http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+
+ 1  function Dijkstra(Graph, source):
+ 2      for each vertex v in Graph:           // Initializations
+ 3          dist[v] := infinity ;              // Unknown distance function from source to v
+ 4          previous[v] := undefined ;         // Previous node in optimal path from source
+ 5      end for ;
+ 6      dist[source] := 0 ;                    // Distance from source to source
+ 7      Q := the set of all nodes in Graph ;
+        // All nodes in the graph are unoptimized - thus are in Q
+ 8      while Q is not empty:                 // The main loop
+ 9          u := vertex in Q with smallest dist[] ;
+10          if dist[u] = infinity:
+11              break ;                        // all remaining vertices are inaccessible from source
+12          end if ;
+13          remove u from Q ;
+14          for each neighbor v of u:         // where v has not yet been removed from Q.
+15              alt := dist[u] + dist_between(u, v) ;
+16              if alt < dist[v]:             // Relax (u,v,a)
+17                  dist[v] := alt ;
+18                  previous[v] := u ;
+19              end if ;
+20          end for ;
+21      end while ;
+22      return dist[] ;
+23  end Dijkstra.
+
+If we are only interested in a shortest path between vertices source and target, we can terminate the search at line 13 if u = target. Now we can read the shortest path from source to target by iteration:
+
+1  S := empty sequence
+2  u := target
+3  while previous[u] is defined:
+4      insert u at the beginning of S
+5      u := previous[u]
