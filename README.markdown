@@ -6,8 +6,8 @@ Implementation of Dijkstra's algorithm to find the shortest (least costly) route
 Notes
 -----
 * The shortest route calculation has both iterative and functional implementations:
-  * \<graph-instance\>.shortestPath(srcNodeId: String, targetNodeId: String)
-  * Graph.shortestPath(\<graph-instance\>, srcNodeId: String, targetNodeId: String)
+  * *\<graph-instance\>*.shortestPath(srcNodeId: String, targetNodeId: String)
+  * Graph.shortestPath(*\<graph-instance\>*, srcNodeId: String, targetNodeId: String)
 * The code base is ready for scaladoc.  In sbt, the action 'doc' will generate <code>scaladoc</code> for the project located in the standard sbt location: *...\<root\>/target/scala_2.9.0/doc/main/api/index.html*.
 
 
