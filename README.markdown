@@ -5,9 +5,9 @@ Implementation of Dijkstra's algorithm to find the shortest (least costly) route
 ## Getting Started
 
 * Retrieve project:
-  * by git clone (only if you have permissions): <code>*\<working-folder\>* $ git clone https://gseaton@github.com/gseaton/dijkstra.git </code>
-  * *-or-* anonymously by HTTP download:
-           * Navigate to Dijkstra repository and the **Source** (upper-left) tab; 
+  * by git clone: <code>*\<working-folder\>* $ git clone https://gseaton@github.com/gseaton/dijkstra.git </code>
+  * *-or-* by download:
+           * Navigate to Dijkstra repository and the **Source** tab (upper-left); 
            * Click on the **Downloads** button on the upper-right portion of the page;
            * Save the compressed project file;
            * Uncompress project file to a working folder
