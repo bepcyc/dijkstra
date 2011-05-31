@@ -15,7 +15,7 @@ Implementation of Dijkstra's algorithm to find the shortest (least costly) route
 
 > $ scala Demo \[\<num-of-nodes\> \[\<source-node-id\> \[\<target-node-id\> \[\<spike-node-enabled\>\]\]\]\]
 
-> sbt> run \[\<num-of-nodes\> \[\<source-node-id\> \[\<target-node-id\> \[\<spike-node-enabled\>\]\]\]\]
+> \> run \[\<num-of-nodes\> \[\<source-node-id\> \[\<target-node-id\> \[\<spike-node-enabled\>\]\]\]\]
 
 where
 
@@ -41,7 +41,7 @@ from command-line:
 
 or in **sbt**
 
-> sbt> run 17 0 8
+> \> run 17 0 8
 
 Both of these commands will create a graph as a 17-sided regular polygon with edges as sides, calculate the shortest route from node 0 to node 8, and then export the graph, with illustrated traversal, into the <code>.../*\<root\>*/exported-graph-images/</code> folder as the file <code>graph.17.0.8.\<timestamp\>.jpg</code>.
 
@@ -64,7 +64,7 @@ from command-line:
 
 or in **sbt**:
 
-> sbt> run 17 0a 8b true
+> \> run 17 0a 8b true
 
 Both of these commands will create a graph as a 17-sided regular polygon with edges as sides and associated spike nodes, calculate the shortest route from node 0a to node 8b, and then export the graph, with illustrated traversal, into the <code>.../*\<root\>*/exported-graph-images/</code> folder as the file <code>graph.17.0a.8b.\<timestamp\>.jpg</code>. 
 
@@ -96,7 +96,7 @@ Source code has scaladoc comment documentation for each method and variable.
 
 To generate scaladoc in **sbt**:
 
-> > doc
+> \> doc
  
 The generated scaladoc documentation is in the standard sbt location: *...\<root\>/target/scala_2.9.0/doc/main/api/index.html*
 
@@ -106,4 +106,4 @@ Unit testing uses the specs framework.
 
 To run the tests in **sbt**:
 
-> > test
+> \> test
