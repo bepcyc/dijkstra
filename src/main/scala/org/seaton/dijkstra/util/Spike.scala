@@ -1,11 +1,13 @@
 package org.seaton.dijkstra.util
 
+import scala.Predef._
+
 import collection.mutable.ListBuffer
-import org.seaton.dijkstra.core.{Graph, Edge, Node}
+import org.seaton.dijkstra.core.{Graph, Edge}
 import org.seaton.dijkstra.cases.generate.GeneratedGraph
 import org.seaton.dijkstra.cases.route.{ShortestRouteInvalidSourceOrTarget, ShortestRouteError, ShortestRouteDoesNotExist, ShortestRoute}
 import java.lang.Double
-import com.sun.org.apache.xpath.internal.operations.Variable
+
 
 object Spike {
 
@@ -26,10 +28,10 @@ object Spike {
 
 
 	def shortest(g: Graph, source: String, target: String) {
-		g.shortest(source, target) match {
+		g.shortestPath(source, target) match {
 			case Some(graphCase) =>
 				graphCase match {
-					case ShortestRoute(route) => println("shortest: " + route)
+					case ShortestRoute(route, dist) => println("shortest: " + route + "; dist: " + dist)
 					case ShortestRouteDoesNotExist() => println("route not exists: ")
 					case ShortestRouteError() => println("route error: ")
 					case ShortestRouteInvalidSourceOrTarget() => println("src/target invalid: ")
@@ -59,10 +61,10 @@ object Spike {
 			val fn = "exported-graph-images/spike." + slices + "." + System.currentTimeMillis() + ".jpg"
 			GraphUtil.exportGraphImage(ograph, 250, 250, fn, "", "", 40, 40, 2.0)
 
-			ograph.shortest("0", "3") match {
+			ograph.shortestPath("0", "3") match {
 				case Some(graphCase) =>
 					graphCase match {
-						case ShortestRoute(route) => println("shortest: " + route)
+						case ShortestRoute(route, dist) => println("shortest: " + route + "; dist: " + dist)
 						case ShortestRouteDoesNotExist() => println("route not exists: ")
 						case ShortestRouteError() => println("route error: ")
 						case ShortestRouteInvalidSourceOrTarget() => println("src/target invalid: ")
@@ -98,6 +100,39 @@ object Spike {
 		try {
 			var n = 12345.12345
 			(-2 until 6) foreach (dp => println(decimalPlaces(n, dp)))
+		} catch {
+			case e: Exception => e.printStackTrace()
+		}
+	}
+
+	def mainx(args: Array[String]) {
+		val slices = 15
+		val units = 100.0
+		val spikes = false
+		val src = "7"
+		val dest = "2"
+		try {
+			println("""slice: %d; src: %s; dest: %s""".format(slices, src, dest))
+			val graph = generateGraph(slices, units, spikes)
+			println("========== functional::")
+			Graph.shortestPath(graph.net, src, dest) match {
+				case Some(spat) => println("good: " + spat)
+				case _ => println("no so good")
+			}
+			println("========== iterative::")
+			graph.shortestPath(src, dest) match {
+				case Some(graphCase) =>
+					graphCase match {
+						case ShortestRoute(route, dist) =>
+							println("shortest: " + route)
+							println("dist: " + dist)
+						case ShortestRouteDoesNotExist() => println("route not exists: ")
+						case ShortestRouteError() => println("route error: ")
+						case ShortestRouteInvalidSourceOrTarget() => println("src/target invalid: ")
+						case _ => println("error")
+					}
+				case _ => println("something bad happened...")
+			}
 		} catch {
 			case e: Exception => e.printStackTrace()
 		}
