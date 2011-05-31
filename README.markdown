@@ -15,10 +15,10 @@ Implementation of Dijkstra's algorithm to find the shortest (least costly) route
 * Run **sbt** in the working folder: <code>*\<working-folder\>* $ sbt</code>
   * Execute tests in **sbt**: <code>\> test</code>
   * Execute demo in **sbt**: <code>\> demo</code>
-    * Review the generated graph image with illustrated traversal of shortest path: <code>*\<working-path\>*/exported-graph-images/graph.23.0.11.\<timestamp\>.jpg</code>
+        * Review the generated graph image with illustrated traversal of shortest path: <code>*\<working-path\>*/exported-graph-images/graph.23.0.11.\<timestamp\>.jpg</code>
   * Generate scaladoc documentation in **sbt**: <code>\> doc</code>
   * Execute a run with a polygon graph with 7 sides and shortest path between "1" and "4" in **sbt**: <code>\> run 7 1 4</code>
-    * Review the generated graph image: <code>*\<working-path\>*/exported-graph-images/graph.7.1.4.\<timestamp\>.jpg</code>
+        * Review the generated graph image: <code>*\<working-path\>*/exported-graph-images/graph.7.1.4.\<timestamp\>.jpg</code>
 
 ## Notes
 
