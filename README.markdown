@@ -7,8 +7,8 @@ Implementation of Dijkstra's algorithm to find the shortest (least costly) route
 * Retrieve project:
   * by git fetch: <code>*\<working-folder\>* $ git fetch https://gseaton@github.com/gseaton/dijkstra.git </code>
   * *-or-* by HTTP download:
-           * Navigate to Dijkstra repository; 
-           * Click on the **Download** button on the upper-right portion of the page;
+           * Navigate to Dijkstra repository and the **Source** (upper-left) tab; 
+           * Click on the **Downloads** button on the upper-right portion of the page;
            * Save the compressed project file;
            * Uncompress project file to a working folder
 * Navigate to the *\<working-folder\>* in a terminal.
