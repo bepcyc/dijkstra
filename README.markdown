@@ -13,6 +13,7 @@ Implementation of Dijkstra's algorithm to find the shortest (least costly) route
 
 * [Scala](http://www.scala-lang.org)
 * [sbt](http://code.google.com/p/simple-build-tool/)
+* [specs](http://code.google.com/p/specs/)
 
 ## Demo
 
