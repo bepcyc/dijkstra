@@ -2,6 +2,21 @@
 
 Implementation of Dijkstra's algorithm to find the shortest (least costly) route between nodes in an undirected graph.
 
+## Getting Started
+
+* Retrieve project:
+  * by git fetch: <code>*\<working-folder\>* $ git fetch https://gseaton@github.com/gseaton/dijkstra.git </code>
+  * *-or-* by HTTP download:
+           * Navigate to Dijkstra repository; 
+           * Click on the **Download** button on the upper-right portion of the page;
+           * Save the compressed project file;
+           * Uncompress project file to a working folder
+* Navigate to the *\<working-folder\>* in a terminal.
+* Run **sbt** in the working folder: <code>*\<working-folder\>* $ sbt</code>
+  * Execute tests in **sbt**: <code>\> test</code>
+  * Execute demo in **sbt**: <code>\> demo</code>
+  * Generate scaladoc documentation in **sbt**: <code>\> doc</code>
+
 ## Notes
 
 * The shortest route calculation has both iterative and functional implementations:
