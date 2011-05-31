@@ -5,11 +5,10 @@ Implementation of Dijkstra's algorithm to find the shortest (least costly) route
 
 Notes
 -----
-- The shortest route calculation has both iterative and functional implementations:
--- \<graph-instance\>.shortestPath(srcNodeId: String, targetNodeId: String)
--- Graph.shortestPath(\<graph-instance\>, srcNodeId: String, targetNodeId: String)
-- The code base is ready for scaladoc.  In sbt, the action 'doc' will generate <code>scaladoc</code> for the project located in the standard sbt location:
-*...\<root\>/target/scala_2.9.0/doc/main/api/index.html*.
+* The shortest route calculation has both iterative and functional implementations:
+  * \<graph-instance\>.shortestPath(srcNodeId: String, targetNodeId: String)
+  * Graph.shortestPath(\<graph-instance\>, srcNodeId: String, targetNodeId: String)
+* The code base is ready for scaladoc.  In sbt, the action 'doc' will generate <code>scaladoc</code> for the project located in the standard sbt location: *...\<root\>/target/scala_2.9.0/doc/main/api/index.html*.
 
 
 GraphUtil
@@ -31,15 +30,15 @@ where
 
 *Arguments:*
 
-- *num-of-nodes* is the number of nodes generated in a regular polygon graph with edges forming the sides of regular polygon (defaults to 23)
-- *source-node-id* is the node id of the starting node for calculating the shortest (least costly) route using Dijkstra's algorithm (defaults to 0)
-- *target-node-id* is the node id of the ending node for calculating the shortest (least costly) route using Dijkstra's algorithm (defaults to 11)
-- *spike-enabled* is a flag to add two (2) 'spike' nodes per polygon node (see below for more information) (defaults to false)
+* *num-of-nodes* is the number of nodes generated in a regular polygon graph with edges forming the sides of regular polygon (defaults to 23)
+* *source-node-id* is the node id of the starting node for calculating the shortest (least costly) route using Dijkstra's algorithm (defaults to 0)
+* *target-node-id* is the node id of the ending node for calculating the shortest (least costly) route using Dijkstra's algorithm (defaults to 11)
+* *spike-enabled* is a flag to add two (2) 'spike' nodes per polygon node (see below for more information) (defaults to false)
 
 *Argument notes*
 
-- If there are *n* number of nodes, the node ids are 0 to n-1 (e.g. "0","1","2",...,"n-1").
-- The order of source and target nodes is irrelevant (other than affecting the direction of the shortest route (if any exist)).
+* If there are *n* number of nodes, the node ids are 0 to n-1 (e.g. "0","1","2",...,"n-1").
+* The order of source and target nodes is irrelevant (other than affecting the direction of the shortest route (if any exist)).
 
 ### Regular Polygon Graphs
 
