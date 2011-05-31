@@ -9,6 +9,11 @@ Implementation of Dijkstra's algorithm to find the shortest (least costly) route
   * Graph.shortestPath(*\<graph-instance\>*, srcNodeId: String, targetNodeId: String)
 * The code base is ready for scaladoc.  In sbt, the action 'doc' will generate <code>scaladoc</code> for the project located in the standard sbt location: *...\<root\>/target/scala_2.9.0/doc/main/api/index.html*.
 
+## Requirements
+
+* [Scala](http://www.scala-lang.org)
+* [sbt](http://code.google.com/p/simple-build-tool/)
+
 ## Demo
 
 ### Usage
@@ -78,9 +83,9 @@ The exported graph images are saved in the <code>.../*\<root\>*/exported-graph-i
 
 The <code>Graph</code> class provides a representation of a graph via nodes with (x,y) Cartesian coordinates and edges between the nodes.
 
-The <code>Graph</code> class provides a <code>shortestRoute(sourceNodeId, targetNodeId)</code> iterative implementation of Dijkstra's algorthim.
+The <code>Graph</code> class provides a <code>*\<graph-instance\>*.shortestPath(sourceNodeId, targetNodeId)</code> iterative implementation of Dijkstra's algorthim.
 
-The <code>Graph</code> companion object provides a few constants as well as  <code>Graph.shortestRoute(graphInstance, sourceNodeId, targetNodeId)</code> functional implementation of Dijkstra's algorthim 
+The <code>Graph</code> companion object provides a few constants as well as the <code>Graph.shortestRoute(graphInstance, sourceNodeId, targetNodeId)</code> functional implementation of Dijkstra's algorthim 
 
 ## GraphUtil
 
