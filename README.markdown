@@ -15,7 +15,10 @@ Implementation of Dijkstra's algorithm to find the shortest (least costly) route
 * Run **sbt** in the working folder: <code>*\<working-folder\>* $ sbt</code>
   * Execute tests in **sbt**: <code>\> test</code>
   * Execute demo in **sbt**: <code>\> demo</code>
+    * Review the generated graph image with illustrated traversal of shortest path: <code>*\<working-path\>*/exported-graph-images/graph.23.0.11.\<timestamp\>.jpg</code>
   * Generate scaladoc documentation in **sbt**: <code>\> doc</code>
+  * Execute a run with a polygon graph with 7 sides and shortest path between "1" and "4" in **sbt**: <code>\> run 7 1 4</code>
+    * Review the generated graph image: <code>*\<working-path\>*/exported-graph-images/graph.7.1.4.\<timestamp\>.jpg</code>
 
 ## Notes
 
@@ -33,8 +36,6 @@ Implementation of Dijkstra's algorithm to find the shortest (least costly) route
 ## Demo
 
 ### Usage
-
-> $ scala Demo \[\<num-of-nodes\> \[\<source-node-id\> \[\<target-node-id\> \[\<spike-node-enabled\>\]\]\]\]
 
 > \> run \[\<num-of-nodes\> \[\<source-node-id\> \[\<target-node-id\> \[\<spike-node-enabled\>\]\]\]\]
 
@@ -56,11 +57,7 @@ where
 
 To exercise the algorithm and generate a exported graph image with shortest route traversal:
 
-from command-line:
-
-> $ scala Demo 17 0 8
-
-or in **sbt**
+In **sbt**:
 
 > \> run 17 0 8
 
@@ -79,11 +76,7 @@ For example, for node "0" with spike nodes enabled, there will also be a "0a" an
 
 To exercise the algorithm with spikes and generate a graph image with the shortest route traversal:
 
-from command-line:
-
-> $ scala Demo 17 0a 8b true
-
-or in **sbt**:
+In **sbt**:
 
 > \> run 17 0a 8b true
 
