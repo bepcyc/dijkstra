@@ -13,6 +13,7 @@ Implementation of Dijkstra's algorithm to find the shortest (least costly) route
            * Uncompress project file to a working folder
 * Navigate to the *\<working-folder\>* in a terminal.
 * Run **sbt** in the working folder: <code>*\<working-folder\>* $ sbt</code>
+  * Execute an update to download all dependencies in **sbt**: <code>\> update</code>
   * Execute tests in **sbt**: <code>\> test</code>
   * Execute demo in **sbt**: <code>\> demo</code>
         * Review the generated graph image with illustrated traversal of shortest path: <code>*\<working-path\>*/exported-graph-images/graph.23.0.11.\<timestamp\>.jpg</code>
