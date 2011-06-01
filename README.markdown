@@ -11,7 +11,7 @@ Implementation of Dijkstra's algorithm to find the shortest (least costly) route
            * Click on the **Downloads** button on the upper-right portion of the page;
            * Save the compressed project file;
            * Uncompress project file to a working folder
-* Navigate to the *\<working-folder\>* in a terminal.
+* Navigate to the <code>*\<working-folder\>*/dijkstra</code> folder in a terminal console.
 * Run **sbt** in the <code>dijkstra/</code> folder: <code>*\<working-folder\>*/dijkstra $ sbt</code>
   * Execute an update to download all dependencies in **sbt**: <code>\> update</code>
   * Execute tests in **sbt**: <code>\> test</code>
