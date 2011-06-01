@@ -62,7 +62,7 @@ In **sbt**:
 
 > \> run 17 0 8
 
-Both of these commands will create a graph as a 17-sided regular polygon with edges as sides, calculate the shortest route from node 0 to node 8, and then export the graph, with illustrated traversal, into the <code>.../*\<root\>*/exported-graph-images/</code> folder as the file <code>graph.17.0.8.\<timestamp\>.jpg</code>.
+This command will create a graph as a 17-sided regular polygon with edges as sides, calculate the shortest route from node 0 to node 8, and then export the graph, with illustrated traversal, into the <code>.../*\<root\>*/exported-graph-images/</code> folder as the file <code>graph.17.0.8.\<timestamp\>.jpg</code>.
 
 ### Regular Polygon Graphs with Spikes
 
@@ -81,7 +81,7 @@ In **sbt**:
 
 > \> run 17 0a 8b true
 
-Both of these commands will create a graph as a 17-sided regular polygon with edges as sides and associated spike nodes, calculate the shortest route from node 0a to node 8b, and then export the graph, with illustrated traversal, into the <code>.../*\<root\>*/exported-graph-images/</code> folder as the file <code>graph.17.0a.8b.\<timestamp\>.jpg</code>. 
+This command will create a graph as a 17-sided regular polygon with edges as sides and associated spike nodes, calculate the shortest route from node 0a to node 8b, and then export the graph, with illustrated traversal, into the <code>.../*\<root\>*/exported-graph-images/</code> folder as the file <code>graph.17.0a.8b.\<timestamp\>.jpg</code>. 
 
 ### Exported Graph Images
 
