@@ -6,7 +6,7 @@ import org.seaton.dijkstra.cases.GraphCase
 /**
  * Case class wrapping a generated graph.
  */
-case class GeneratedGraph(graph: Graph) extends GraphCase
+case class GeneratedGraph[S >: Null <: AnyRef](graph: Graph[S]) extends GraphCase
 
 /**
  * Case class for an error occurring during the generation of a graph.

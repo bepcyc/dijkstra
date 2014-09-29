@@ -2,7 +2,6 @@ package org.seaton.dijkstra.util
 
 import org.seaton.dijkstra.cases._
 import org.seaton.dijkstra.core._
-import collection.mutable._
 import generate.{GeneratedGraph, GeneratedGraphFailed}
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -14,6 +13,8 @@ import java.io.{FileInputStream, FileOutputStream, InputStream}
 import java.lang.{String, Double}
 import route.{ShortestRoute, ShortestRouteError, ShortestRouteInvalidSourceOrTarget, ShortestRouteDoesNotExist}
 import sun.management.counter.Units
+import scala.collection.mutable.HashMap
+import scala.collection.mutable.ListBuffer
 
 /**
  * Provides utility functions and runner for the Graph class illustrating the Dijkstra algorithm of finding the shortest (least costly) route between two (2) nodes.
@@ -138,7 +139,7 @@ object GraphUtil {
 	 *
 	 * @return Option[String] for success with export jpeg filename; otherwise None
 	 */
-	def exportGraphImage(graph: Graph, height: Int, width: Int, fn: String, lineUpperLeft: String = "", lineLowerLeft: String = "",
+	def exportGraphImage(graph: Graph[String], height: Int, width: Int, fn: String, lineUpperLeft: String = "", lineLowerLeft: String = "",
 						 xoffset: Int = 0, yoffset: Int = 0, zoom: Double = 1.0, traversal: List[String] = null, logo: String = null): Option[String] = {
 		try {
 
@@ -247,7 +248,7 @@ object GraphUtil {
 	 *
 	 * @return Option[(Node, Node)] with spike nodes; otherwise None
 	 */
-	private def polySpikes(key: String, theta: Double, x: Double, y: Double, spike: Int): Option[(Node, Node)] = {
+	private def polySpikes(key: String, theta: Double, x: Double, y: Double, spike: Int): Option[(Node[String], Node[String])] = {
 		try {
 			val x1 = spike + (spike * scala.math.cos(theta + delta))
 			val y1 = spike + (spike * scala.math.sin(theta + delta))
@@ -274,8 +275,8 @@ object GraphUtil {
 	def polygonGraph(slices: Int, radius: Double, spiky: Boolean = true): Option[GraphCase] = {
 		try {
 			val slice = (2 * scala.math.Pi) / (1.0 * slices)
-			val nodes: HashMap[String, Node] = HashMap.empty[String, Node]
-			val edges = new ListBuffer[Edge]()
+			val nodes: HashMap[String, Node[String]] = HashMap.empty[String, Node[String]]
+			val edges = new ListBuffer[Edge[String]]()
 			(0 until slices) foreach (n => {
 				val theta = slice * n
 				var offset = 0.0
@@ -319,7 +320,7 @@ object GraphUtil {
 	 *
 	 * @return true if the edge contains both node ids
 	 */
-	def isEdge(edge: Edge, na: String, nb: String): Boolean = {
+	def isEdge(edge: Edge[String], na: String, nb: String): Boolean = {
 		(edge.nodeA.equals(na) && edge.nodeB.equals(nb)) || (edge.nodeA.equals(nb) && edge.nodeB.equals(na))
 	}
 

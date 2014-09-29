@@ -5,6 +5,7 @@ import org.seaton.dijkstra.cases.route.{ShortestRouteError, ShortestRouteInvalid
 import scala.Predef._
 import java.util.Date
 import org.seaton.dijkstra.core.Graph
+import org.seaton.dijkstra.core.GraphBase
 
 /**
  * <h3>Usage</h3>
@@ -100,7 +101,7 @@ import org.seaton.dijkstra.core.Graph
  * The exported graph images are saved in the <code>.../<em>&lt;root&gt;</em>/exported-graph-images/</code> folder.
  *
  */
-object Demo {
+object Demo extends GraphBase[String] {
 
 	/**
 	 * Prints usage and examples to console.
@@ -156,12 +157,15 @@ object Demo {
 			GraphUtil.polygonGraph(slices, unit, spikes) match {
 				case Some(graphCase) =>
 					graphCase match {
-						case GeneratedGraph(graph) =>
+						case generatedGraph: GeneratedGraph[String] => {
+							val graph = generatedGraph.graph 
 							// graph.shortestPath(source, target) match {
-							Graph.shortestPath(graph, source, target) match {
+							shortestPath(graph, source, target) match {
 								case Some(graphCase) =>
 									graphCase match {
-										case ShortestRoute(nodes, dist) =>
+										case shortestRoute: ShortestRoute[String] => 
+										  	val nodes = shortestRoute.route
+										  	val dist = shortestRoute.dist
 											print("Shortest route generated: ")
 											val info = """%dn;%de::""".format(graph.nodes.size, graph.edges.size)
 											val sb = new StringBuilder()
@@ -181,6 +185,7 @@ object Demo {
 									}
 								case _ => println("should never get here...")
 							}
+						}
 						case GeneratedGraphFailed(msg) => println("graph generation failed: " + msg)
 						case _ => println("should never get here...")
 					}

@@ -16,7 +16,7 @@ case class ShortestRouteInvalidSourceOrTarget() extends GraphCase
 /**
  * Case class wrapping the shortest route between two (2) nodes in a graph.
  */
-case class ShortestRoute(route: List[String], dist: Double) extends GraphCase
+case class ShortestRoute[S >: Null <: AnyRef](route: List[S], dist: Double) extends GraphCase
 
 /**
  * Case class for an error occurring during a shortest route calculation in a graph.

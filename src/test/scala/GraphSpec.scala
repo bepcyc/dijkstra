@@ -1,5 +1,6 @@
 import org.seaton.dijkstra.core._
-import org.specs.Specification
+import org.specs2.mutable.Specification
+import org.specs2.matcher.ThrownMessages
 
 class GraphSpec extends Specification {
 

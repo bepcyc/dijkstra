@@ -7,12 +7,12 @@ package org.seaton.dijkstra.core
  * @param nodeA id for the first node of the edge
  * @param nodeB id for the second node of the edge
  */
-class Edge(val nodeA: String, val nodeB: String) {
+class Edge[S >: Null <: AnyRef](val nodeA: S, val nodeB: S) {
 
 	/**
 	 * Lazy string representation of the edge; will not be instantiated until called.
 	 */
-	lazy val str = nodeA + " <-> " + nodeB
+	lazy val str = nodeA.toString + " <-> " + nodeB.toString
 
 	/**
 	 * Overridden method to return default string representation.
@@ -30,5 +30,5 @@ object Edge {
 	 * @param nodeA id for the first node of the edge
 	 * @param nodeB id for the second node of the edge
 	 */
-	def apply(nodeA: String, nodeB: String) = new Edge(nodeA, nodeB)
+	def apply[S >: Null <: AnyRef](nodeA: S, nodeB: S) = new Edge(nodeA, nodeB)
 }
